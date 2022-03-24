@@ -3,7 +3,6 @@ return (
 <div>
     <button onclick={}>Klikk</button>
     </div>
-
 )
 }
 
