@@ -1,15 +1,19 @@
+import { Routes, Route } from 'react-router-dom'
 import Movies from './components/Movies'
-import MyComponent from './components/MyComponent'
-
+import Movie from './components/Movie'
+import Actors from './components/Actors'
+import Actor from './components/Actor'
 
 export default function App() {
-  // Write JavaScript, use Hooks, add state and more
-
   return (
-    <main className="mx-auto mt-6 max-w-sm border-2 p-6">
-      <p className="text-3xl font-bold underline">Legg til JSX</p>
-      < MyComponent />
-      < Movies />
-    </main>
+    <Routes>
+      <Route path="movie" />
+      <Route index element={<Movies />} />
+      <Route path=":slug" element={<Movie />} />
+
+      {/* <Route path="actor" />
+      <Route index element={<Actors />} />
+      <Routes path=":slug" element={<Actor />} /> */}
+    </Routes>
   )
 }

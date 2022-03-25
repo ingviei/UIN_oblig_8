@@ -1,6 +1,7 @@
 export default function Movie({ title, actor }) {
   return (
     <>
+      <h1>Movie</h1>
       <h1>{title}</h1>
       <h2>{actor}</h2>
     </>

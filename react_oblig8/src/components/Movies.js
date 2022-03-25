@@ -1,20 +1,30 @@
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { getMovies } from '../lib/services/movieService'
 import Movie from './Movie'
 
-
 export default function Movies() {
-  const getSanityData = async () => {
-      const movies = await getMovies()
-      console.log(movies)
+  const [movies, setMovies] = useState([])
+  // const [actors, setActors] = useState([])
+
+  const getMovieData = async () => {
+    const movies = await getMovies()
+    // setMovies(movies)
   }
 
   return (
-    <div>
-      <button type="button" onClick={getSanityData}>
-        Klikk meg
-      </button>
-      < Movie />
-    </div>
+    <>
+    <h1 className="bg-red-400">Movies forside</h1>
+    <ul>
+      {movies.map((movie) => (
+        <li key={movie.id}>
+          <Link to={`/movie/${movie.slug}` > { movie, }} />: .title }} > </Link>))}
+    </li>
+      </ul>
+      ))}
+    
+    <button type="button" onClick={getMovieData}>Klikk meg</button><Movie />
+      </>
   )
 }
 

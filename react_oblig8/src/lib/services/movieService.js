@@ -1,9 +1,8 @@
 import client from '../client'
 
 const fields = `
-title, 
-"slug": slug.current, 
-"actor": actor->name.current, 
+movie,  
+"actor": actor->fullname, 
 `
 
 export async function getMovies() {
