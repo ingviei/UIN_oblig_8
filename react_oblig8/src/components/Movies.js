@@ -13,18 +13,17 @@ export default function Movies() {
   }
 
   return (
-    <>
+    <div>
     <h1 className="bg-red-400">Movies forside</h1>
     <ul>
       {movies.map((movie) => (
         <li key={movie.id}>
-          <Link to={`/movie/${movie.slug}` > { movie, }} />: .title }} > </Link>))}
-    </li>
-      </ul>
-      ))}
-    
+          <Link to={`/movie/${movie.slug}` > {movie}}> </Link>
+    </li> ))
+    </ul> 
+  
     <button type="button" onClick={getMovieData}>Klikk meg</button><Movie />
-      </>
+    </div>
   )
 }
 
