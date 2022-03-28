@@ -13,10 +13,10 @@ export default function Movies() {
   }
 
   // Start på metoden for å hente alle filmer for en actor
-  // const actorsMovies = async (actor) => {
-  //   const data = await getMoviesByActor(actor)
-  //   setMovies(data)
-  // }
+  const actorsMovies = async (actor) => {
+    const data = await getMoviesByActor(actor)
+    setMovies(data)
+  }
 
   // useEffect(() => {
   //   const listMovies = async () => {

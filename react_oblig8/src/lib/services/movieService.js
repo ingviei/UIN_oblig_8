@@ -40,7 +40,7 @@ export async function getActor(slug) {
 // Hente alle filmer for en skuespiller
 export async function getMoviesByActor(actor) {
   const data = await client.fetch(
-    `*[_type == "quiz" && actor->actor.fullname==$actor]{${fields}}`,
+    `*[_type == "movie" && actor->actor.fullname==$actor]{${fields}}`,
     { actor }
   )
   console.log(data)
