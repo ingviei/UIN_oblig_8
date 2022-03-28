@@ -6,16 +6,17 @@ import Movie from './Movie'
 export default function Movies() {
   const [movies, setMovies] = useState([])
 
+  // Henter alle filmer
   const getMovieData = async () => {
     const movie = await getMovies()
     setMovies(movie)
   }
 
   // Start på metoden for å hente alle filmer for en actor
-  const actorsMovies = async (actor) => {
-    const data = await getMoviesByActor(actor)
-    setMovies(data)
-  }
+  // const actorsMovies = async (actor) => {
+  //   const data = await getMoviesByActor(actor)
+  //   setMovies(data)
+  // }
 
   // useEffect(() => {
   //   const listMovies = async () => {
@@ -49,17 +50,13 @@ export default function Movies() {
           {/* {JSON.stringify(movies)} */}
           {movies?.map((movie) => (
             <>
-              <Movie key={movie._id} title={movie.movie} />
-              <Link to={`/movie/${movie.movie}`}> {movie.movie} </Link>
+              {/* <Movie key={movie._id} title={movie.movie} /> */}
+              <Link className="underline text-teal-900 hover:bg-teal-500" to={`/movies/${movie.movie}`}> {movie.movie} </Link>
             </>
           ))}
         </section>
-        <Movie key={actor._id} actor={actorsMovies} />
+        {/* <Movie key={actor._id} actors={actorsMovies} /> */}
       </div>
     </>
   )
 }
-
-// Lage en knapp i Movies som skal håndtere det å hente data eller optimalt sett bruk
-// useEffect til å laste inn innhold umiddelbart
-// Lage state i Movies som skal holde på data fra Sanity
