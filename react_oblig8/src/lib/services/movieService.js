@@ -1,6 +1,6 @@
 import client from '../client'
 
-const fields = `
+const movieFields = `
 _id, 
 movie,  
 "actor": actor->fullname, 
@@ -13,9 +13,13 @@ _id,
 "actor": fullname,
 "slug": slug.current,
 `
+const movieTitle = `
+movie
+`
+
 // Hente alle filmer
 export async function getMovies() {
-  const data = await client.fetch(`*[_type == 'movie']{${fields}}`)
+  const data = await client.fetch(`*[_type == 'movie']{${movieFields}}`)
   console.log(data)
   return data
 }
@@ -28,21 +32,18 @@ export async function getAllActors() {
 }
 
 export async function getActor(slug) {
-  console.log('test', slug)
   const data = await client.fetch(
-    `*[_type == 'actor' && slug.current=="kate-winslet"]{${actorFields}}`,
+    `*[_type == 'actor' && slug.current==$slug]{${actorFields}}`,
     { slug }
   )
-  console.log(data)
   return data
 }
 
 // Hente alle filmer for en skuespiller
 export async function getMoviesByActor(actor) {
   const data = await client.fetch(
-    `*[_type == "movie" && actor->actor.fullname==$actor]{${fields}}`,
+    `*[_type == "movie" && actor->fullname==$actor]{${movieTitle}}`,
     { actor }
   )
-  console.log(data)
   return data
 }

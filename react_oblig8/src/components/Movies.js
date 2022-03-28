@@ -12,12 +12,6 @@ export default function Movies() {
     setMovies(movie)
   }
 
-  // Start på metoden for å hente alle filmer for en actor
-  const actorsMovies = async (actor) => {
-    const data = await getMoviesByActor(actor)
-    setMovies(data)
-  }
-
   // useEffect(() => {
   //   const listMovies = async () => {
   //     const data = await getMovies()
@@ -47,13 +41,18 @@ export default function Movies() {
           Trykk her for å se alle filmer
         </button>
         <section>
-          {/* {JSON.stringify(movies)} */}
-          {movies?.map((movie) => (
-            <>
-              {/* <Movie key={movie._id} title={movie.movie} /> */}
-              <Link className="underline text-teal-900 hover:bg-teal-500" to={`/movies/${movie.movie}`}> {movie.movie} </Link>
-            </>
-          ))}
+          <ul>
+            {movies?.map((movie) => (
+              <li key={movie._id}>
+                <Link
+                  className="text-teal-900 underline hover:bg-teal-500"
+                  to={`/movies/${movie.slug}`}
+                >
+                  {movie.movie}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
         {/* <Movie key={actor._id} actors={actorsMovies} /> */}
       </div>
