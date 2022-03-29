@@ -32,9 +32,8 @@ export default function Movies() {
   return (
     <>
       <div>
-        <h1 className="bg-red-400">Movies forside</h1>
         <button
-          className="mt-5 bg-slate-500"
+          className="bg-red-400 p-3 text-xl"
           type="button"
           onClick={getMovieData}
         >
@@ -43,7 +42,10 @@ export default function Movies() {
         <section>
           <ul>
             {movies?.map((movie) => (
-              <li key={movie._id}>
+              <li
+                key={movie._id}
+                className="m-4 flex basis-full justify-around"
+              >
                 <Link
                   className="text-teal-900 underline hover:bg-teal-500"
                   to={`/movies/${movie.slug}`}

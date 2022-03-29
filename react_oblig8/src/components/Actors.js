@@ -14,9 +14,8 @@ export default function Actors() {
 
   return (
     <div>
-      <h1 className="bg-red-400">Actors</h1>
       <button
-        className="mt-5 bg-slate-500"
+        className="bg-red-400 p-3 text-xl"
         type="button"
         onClick={getActorData}
       >
@@ -25,7 +24,7 @@ export default function Actors() {
       {/* <Movie key={actor._id} actor={actor.actor} /> */}
       <ul>
         {actors?.map((actor) => (
-          <li key={actor._id}>
+          <li key={actor._id} className="m-4 flex basis-full justify-around">
             <Link
               className="text-teal-900 underline hover:bg-teal-500"
               to={`/actor/${actor.slug}`}

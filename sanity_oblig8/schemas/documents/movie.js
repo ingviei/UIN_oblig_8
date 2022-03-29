@@ -11,13 +11,6 @@ export default {
       to: [{ type: "actor" }],
     },
 
-    // {
-    //   type: "array",
-    //   name: "actors",
-    //   title: "Actors",
-    //   of: [{ type: "actor" }],
-    // },
-
     {
       type: "slug",
       name: "slug",

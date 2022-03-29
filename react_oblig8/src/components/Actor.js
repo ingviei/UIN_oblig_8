@@ -26,15 +26,25 @@ export default function Actor() {
 
   return (
     <div>
-      <h1>{actorDetails?.actor}</h1>
+      <h1 className="m-6 bg-teal-600 p-3 text-center text-xl">
+        {actorDetails?.actor}
+      </h1>
 
-      <button className="bg-white" type="button" onClick={getActorMovies}>
-        Klikk for å se alle filmer
+      <button
+        className="bg-red-400 p-2 text-xl"
+        type="button"
+        onClick={getActorMovies}
+      >
+        Se alle filmer skuespilleren er med i
       </button>
-
       <ul>
         {actorMovies?.map((movie) => (
-          <li key={movie._id}>{movie.movie}</li>
+          <li
+            key={movie._id}
+            className="m-4 flex basis-full justify-around text-teal-900 underline"
+          >
+            {movie.movie}
+          </li>
         ))}
       </ul>
     </div>
