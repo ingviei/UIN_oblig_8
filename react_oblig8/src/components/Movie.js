@@ -1,10 +1,9 @@
-export default function Movie({ title, actor }) {
+import { Link } from 'react-router-dom'
+
+export default function Movie({ title }) {
   return (
-    <>
-      <h1 className="bg-green-400">Movie</h1>
-      <h2>{title}</h2>
-      {/* <h3>{actor}</h3> */}
-      {/* <h4>{actors}</h4> */}
-    </>
+    <div>
+      <Link to={`/movie/${title}`}> {title} </Link>
+    </div>
   )
 }

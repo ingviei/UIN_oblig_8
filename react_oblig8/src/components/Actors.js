@@ -21,7 +21,6 @@ export default function Actors() {
       >
         Trykk her for å se alle skuespillere
       </button>
-      {/* <Movie key={actor._id} actor={actor.actor} /> */}
       <ul>
         {actors?.map((actor) => (
           <li key={actor._id} className="m-4 flex basis-full justify-around">

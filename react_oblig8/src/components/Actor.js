@@ -15,7 +15,7 @@ export default function Actor() {
     getActorDetails()
   }, [slug])
 
-  // Start på metoden for å hente alle filmer for en actor
+  // Hente alle filmer for en skuespiller
   const getActorMovies = async () => {
     const actor = await getActor(slug)
     setActorDetails(...actor)
@@ -26,12 +26,12 @@ export default function Actor() {
 
   return (
     <div>
-      <h1 className="m-6 bg-teal-600 p-3 text-center text-xl">
+      <h1 className="text-l m-6 bg-teal-600 p-3 text-center">
         {actorDetails?.actor}
       </h1>
 
       <button
-        className="bg-red-400 p-2 text-xl"
+        className="text-l bg-red-400 p-1 underline"
         type="button"
         onClick={getActorMovies}
       >
@@ -41,7 +41,7 @@ export default function Actor() {
         {actorMovies?.map((movie) => (
           <li
             key={movie._id}
-            className="m-4 flex basis-full justify-around text-teal-900 underline"
+            className="m-4 flex basis-full justify-around text-teal-900"
           >
             {movie.movie}
           </li>
